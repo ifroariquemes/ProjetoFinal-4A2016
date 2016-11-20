@@ -1,27 +1,15 @@
-#Projeto final de Des. Sis. 4° A (2016)
+#Sistema de Blog
 
-O trabalho final será o desenvolvimento de um sistema com requisitos específicos. Será separado em grupos, cada um com um projeto de sistema. Cada equipe será composta por no máximo quatro pessoas.
+##Problemática
 
-Basicamente as habilidades necessárias para executar este projeto incluem criação de **banco de dados**, domínio de uma linguagem de programação para geração de **CRUD** e resolução de **problemas específicos** tratados na descrição do problema de cada aplicação.
+Criar um sistema de blog para múltiplos autores, onde cada autor pode escrever postagens que vão para a página inicial. Ou seja, será um blog comunitário (não haverá um dono ou autor com mais destaque que outros). Cada autor terá login e senha para entrar no sistema.
 
-Este repositório foi criado para que as equipes possam trabalhar adequadamente versionando seu código e permitindo o monitoramento pelo professor a todo momento. **Todos os integrantes devem possuir uma conta GitHub** e serão adicionados como colaboradores do repositório. Neste repositório, **cada sistema será um branch**, por isso as equipes devem fazer checkout do branch apropriado para trabalhar.
+Na página inicial deverá constar uma lista com todas categorias de postagens, bem como os títulos, data, autor e resumos das últimas 20 postagens. No fim da página, deve ser dado ao público paginações por onde poderão navegar por postagens anteriores. A lista de categorias apresentarão links para listas de postagens dessas mesmas categorias específicas seguindo as regras da página inicial.
 
-##O que será avaliado?
+No cadastro das postagens deverá conter título, resumo, texto completo, categoria a qual pertence e data de criação. O texto completo consistirá apenas de palavras, sem imagens, porém será necessário permitir o autor deixar partes do texto em negrito, itálico ou sublinhado, pelo menos.
 
-- Todos os membros da equipe devem commitar
-- Os requisitos do sistema devem estar de acordo com o foi codificado
-- Domínio das ferramentas e frameworks utilizadas
+Por ser o blog comunitário, qualquer autor poderá editar a postagens de outros autores, sabendo que ficará registrada a última pessoa que fez alteração na postagem e a data. O mesmo se aplica à deleção de postagens, porém nenhuma postagem será completamente apagada, somente não mais aparecerá para o público. Deverá ficar registrado o autor que desativou a publicação.
 
-##Tópicos necessários no README.md
+Na visualização da postagem todas as informações deverão estar visíveis, o título, texto completo, o nome do autor, a data de criação, e quando aplicável, a data e autor que alterou o conteúdo.
 
-O arquivo README.md do branch deve ser modificado para explicar o processo de desenvolvimento, além das ferramentas e frameworks utilizados. 
-
-**O projeto não será avaliado sem o README.md modificado!**
-
-- Nome do sistema
-- Equipe de desenvolvimento
-- Linguagem de programação (todos as linguagens utilizadas)
-- Ferramentas (IDE, compiladores, debuggers, editores, testadores, navegadores, etc)
-- Frameworks e Dependências
-- Descrição do processo de desenvolvimento (explicar detalhes de planejamento, execução e testes do sistema)
-- Descrição do processo de compilação/implantação/execução do sistema a partir do código-fonte no repositório
+Não haverá possibilidade de o público comentar as postagens.
