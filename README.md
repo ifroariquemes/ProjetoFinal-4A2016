@@ -1,27 +1,13 @@
-#Projeto final de Des. Sis. 4° A (2016)
+#Sistema de Lista de Desejos
 
-O trabalho final será o desenvolvimento de um sistema com requisitos específicos. Será separado em grupos, cada um com um projeto de sistema. Cada equipe será composta por no máximo quatro pessoas.
+##Problemática
 
-Basicamente as habilidades necessárias para executar este projeto incluem criação de **banco de dados**, domínio de uma linguagem de programação para geração de **CRUD** e resolução de **problemas específicos** tratados na descrição do problema de cada aplicação.
+Criar um sistema de lista de desejos para uma loja de informática. Consiste em um catálogo de produtos em que o usuário fará pesquisas e indicará vários produtos que deseja comprar. No final o usuário pede para salvar a lista informando seu e-mail. O sistema então enviará um e-mail para o usuário contendo dos os itens da lista e o valor, além de salvar os dados da lista no banco de dados para que o lojista entre em contato com o usuário posteriormente.
 
-Este repositório foi criado para que as equipes possam trabalhar adequadamente versionando seu código e permitindo o monitoramento pelo professor a todo momento. **Todos os integrantes devem possuir uma conta GitHub** e serão adicionados como colaboradores do repositório. Neste repositório, **cada sistema será um branch**, por isso as equipes devem fazer checkout do branch apropriado para trabalhar.
+Para que isto seja possível, será necessário criar (a) **cadastro de categorias**, contendo seu nome, porém uma categoria pode ter sub-categorias; (b) **cadastro de produtos**, contendo nome, valor, descrição, categoria e fotos; (c) **cadastro de listas de desejos** contendo os dados do usuário e os itens marcados por ele, sendo os dados do usuário o nome, telefone e e-mail.
 
-##O que será avaliado?
+Na página inicial deve constar as categorias para que o usuário possa navegar pelo produtos desta categoria, e um campo de busca para que a pesquisa seja iniciada pelo nome desse produto, além de alguns produtos selecionados aleatoriamente do banco de dados.
 
-- Todos os membros da equipe devem commitar
-- Os requisitos do sistema devem estar de acordo com o foi codificado
-- Domínio das ferramentas e frameworks utilizadas
+Além dos cadastros, o lojista poderá visualizar a qualquer momento um relatório dos 10 itens mais desejados do mês e os 10 mais desejados de sempre. Esse sistema de administração de cadastro e relatório deve ser protegido por senha ao cadastrar administradores no sistema.
 
-##Tópicos necessários no README.md
-
-O arquivo README.md do branch deve ser modificado para explicar o processo de desenvolvimento, além das ferramentas e frameworks utilizados. 
-
-**O projeto não será avaliado sem o README.md modificado!**
-
-- Nome do sistema
-- Equipe de desenvolvimento
-- Linguagem de programação (todos as linguagens utilizadas)
-- Ferramentas (IDE, compiladores, debuggers, editores, testadores, navegadores, etc)
-- Frameworks e Dependências
-- Descrição do processo de desenvolvimento (explicar detalhes de planejamento, execução e testes do sistema)
-- Descrição do processo de compilação/implantação/execução do sistema a partir do código-fonte no repositório
+**A função de e-mail deverá funcionar de verdade na correção desse sistema!**
