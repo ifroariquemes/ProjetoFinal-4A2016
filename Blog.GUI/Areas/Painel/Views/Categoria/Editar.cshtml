@@ -1,0 +1,70 @@
+﻿@model Blog.Domain.Entities.Categoria
+
+<link href="~/Content/colorpicker.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-colorpicker.js"></script>
+
+<div class="col-md-12">
+    <!--breadcrumbs start -->
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Dashboard", "Home", new { Area = "Painel" })"><i class="fa fa-home"></i> Inicio</a></li>
+        <li><a href="@Url.Action("Index", "Categoria", new { Area = "Painel" })"><i class="fa fa-home"></i> Categorias</a></li>
+        <li class="active">Editar</li>
+    </ul>
+    <!--breadcrumbs end -->
+</div>
+
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading">
+            @(string.IsNullOrEmpty(Model.Id) ? "Cadastrar nova categoria" : "Editar categoria: " + Model.Nome)
+        </header>
+        <div class="panel-body">
+            <div class="form">
+                <form class="cmxform form-horizontal " id="grupoForm" method="POST" action="" novalidate="novalidate" enctype="multipart/form-data">
+
+                    <div class="form-group ">
+                        <label for="Nome" class="control-label col-lg-3">Nome:</label>
+                        <div class="col-lg-6">
+                            <input class=" form-control" id="Nome" name="Nome" type="text" value="@Model.Nome" required="" minlength="3">
+                            <label for="Nome" class="error">@Html.ValidationMessageFor(x => x.Nome)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-3 col-lg-6">
+                            <button class="btn btn-primary" type="submit">Salvar</button>
+                            <a href="@Url.Action("Dashboard","Home", new {Area = "Painel"})" class="btn btn-default">Cancelar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+    $("#grupoForm").validate({
+        rules: {
+            Nome: {
+                required: true,
+                minlength: 3
+            }
+        },
+        messages: {
+            Nome: {
+                required: "O campo nome é obrigatorio.",
+                minlength: "O campo nome deve conter no mínimo 3 caracteres."
+            }
+        }
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".color").colorpicker();
+    });
+</script>

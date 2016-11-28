@@ -17,5 +17,10 @@ namespace Blog.Application
         {
             return _repository.GetAll().FirstOrDefault(x => x.Login == login && x.Senha == senha);
         }
+
+        public Autor BuscarPorLogin(string nome)
+        {
+            return _repository.GetAll().FirstOrDefault(x => x.Login == nome);
+        }
     }
 }

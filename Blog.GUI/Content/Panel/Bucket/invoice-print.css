@@ -1,0 +1,25 @@
+#sidebar, .header, .site-footer, .invoice-header, .invoice-btn {
+    display: none ;
+}
+.header , .site-footer{
+    min-height: 0;
+}
+
+#main-content {
+    margin-left: 0;
+    width: 100%;
+    margin-top: -50px;
+}
+
+.wrapper {
+    margin-top:0px ;
+}
+
+ul.amounts li {
+    padding: 0;
+}
+
+.invoice-to h2, .invoice-to {
+    margin-top: 15px;
+}
+

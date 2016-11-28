@@ -1,0 +1,191 @@
+﻿@using System.Globalization
+@using PagedList.Mvc
+@model PagedList.IPagedList<Blog.Domain.Entities.Post>
+<div class="col-md-12">
+    <!--breadcrumbs start -->
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Dashboard", "Home", new { Area = "Painel" })"><i class="fa fa-home"></i> Inicio</a></li>
+        <li class="active">Eventos</li>
+    </ul>
+    <!--breadcrumbs end -->
+</div>
+
+<div class="col-md-12">
+</div>
+
+<div class="col-sm-12">
+    <section class="panel">
+        <header class="panel-heading">
+            Postagem
+        </header>
+        <div class="panel-body">
+            <div class="adv-table editable-table ">
+                <div class="clearfix" style="margin-bottom: 15px;">
+                    <div class="btn-group">
+                        <a href="@Url.Action("Editar")" class="btn btn-primary">
+                            Nova Postagem <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Tools <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="#">Print</a></li>
+                            <li><a href="#">Save as PDF</a></li>
+                            <li><a href="#">Export to Excel</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="editable-sample_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                    <table class="table table-hover general-table">
+                        <thead>
+                            <tr role="row">
+                                <th>Titulo</th>
+                                <th>Data</th>
+                                <th>Publicado</th>
+                                <th style="width: 200px">Opções</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <form method="GET" action="" novalidate="novalidate">
+                                    <td></td>
+                                    <td class=" "><input type="text" class="form-control small" id="nome" name="nome" type="text" value=""></td>
+                                    <td class=" "><input type="text" class="form-control small" id="email" name="email" type="text" value=""></td>
+                                    <td class=" "></td>
+                                    <td></td>
+                                    <td class=" ">
+                                        <button class="btn btn-primary" type="submit" class="btn btn-white active tooltips" data-original-title="Filtrar" data-toggle="tooltip">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <a href="#" class="btn btn-white active tooltips" data-original-title="Limpar" data-toggle="tooltip">
+                                            <i class="fa fa-refresh"></i>
+                                        </a>
+                                    </td>
+                                </form>
+                            </tr>
+                            @if (Model.Any())
+                            {
+                                foreach (var post in Model)
+                                {
+                                    <tr id="id_@post.Id">
+                                        <td>@post.Titulo</td>
+                                        <td>@post.DateTime.ToShortDateString()</td>
+                                        <td>@post.Ativo</td>
+
+                                        <td>
+                                            <a href="@Url.Action("AtivarDesativarPost", new { idPost = post.Id, status = post.Ativo })" class="btn btn-white active tooltips" data-original-title="Ativar/Desativar" data-toggle="tooltip">
+                                                @{
+                                                    var classe = "fa fa-thumbs-up";
+                                                    var alerta = "Destativar";
+                                                }
+                                                @if (!post.Ativo)
+                                                {
+                                                    classe = "fa fa-thumbs-down";
+                                                    alerta = "Ativar";
+                                                }
+                                                <i class="@classe" title="@alerta"></i>
+                                            </a>
+                                            <a href="@Url.Action("Editar", new { Id = post.Id })" class="btn btn-white active tooltips" data-original-title="Editar" data-toggle="tooltip">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr>
+                                                            <td colspan="6">Não foi encontrado dados para a exibição</td>
+                                                        </tr>
+                                                    }
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="dataTables_paginate paging_bootstrap pagination pull-left">
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),
+                                    new PagedListRenderOptions
+                                    {
+                                        UlElementClasses = Enumerable.Empty<string>(),
+                                        DisplayPageCountAndCurrentLocation = true,
+                                        PageCountAndCurrentLocationFormat = "Página {0} de {1}"
+
+                                    })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Excluir Arquivos -->
+            <div class="modal fade" id="confimarExclusao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Confirmar exclusão</h4>
+                        </div>
+
+                        <div class="modal-body row">
+
+                            <div class="col-md-5 img-modal">
+                                <img class="imgModal" src="" alt="">
+                            </div>
+                            <div class="col-md-7">
+                                <h4 class="modal-title" id="myModalLabel">Deseja realmente excluir este item?</h4>
+                                <br />
+                                <h5 class="editNome"></h5>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button class="btn btn-danger" type="button" id="btnExcluirModal">Excluir</button>
+                            <button data-dismiss="modal" aria-hidden="true" class="btn" type="button">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal-->
+
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var itemAtual = {};
+        $('#confimarExclusao').on('show.bs.modal', function (e) {
+            carregaItemAtual(e.relatedTarget);
+
+            $(this).find('.imgModal').attr('src', itemAtual.pathimg);
+            $('.editNome').text(itemAtual.nome);
+
+        });
+
+        $('#btnExcluirModal').click(function () {
+            $('#id_' + itemAtual.id).remove();
+
+            $.ajax({
+                url: "@Url.Action("Excluir")",
+                type: "POST",
+                data: JSON.stringify({ id: itemAtual.id }),
+                contentType: 'application/json'
+            });
+
+            $('#confimarExclusao').modal('hide');
+        });
+
+        function carregaItemAtual(target) {
+            itemAtual.id = $(target).data('id');
+            itemAtual.pathimg = $('#' + itemAtual.id).data('pathimg');
+            itemAtual.nome = $('#' + itemAtual.id).data('nome');
+        }
+    });
+
+</script>

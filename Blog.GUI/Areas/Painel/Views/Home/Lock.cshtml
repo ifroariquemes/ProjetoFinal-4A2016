@@ -1,0 +1,76 @@
+﻿@using Blog.GUI.Helper
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keyword" content="HDI, Dashboard, MegaJogos, Mega, Jogos ">
+    <link rel="shortcut icon" href="~/Content/img/favicon.png">
+
+    <title>Sessão Bloqueada!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/Content/style.css" rel="stylesheet">
+    <link href="~/Content/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<script type="text/javascript">
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        // add a zero in front of numbers<10
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout(function () { startTime(); }, 500);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+</script>
+
+<body class="lock-screen" onload="startTime()">
+
+    <div class="lock-wrapper">
+        <div id="time"></div>
+        <div class="lock-box text-center">
+            <label class="lock-name">@Seguranca.Usuario().Nome</label>
+            <img src="~/Content/Panel/Bucket/img/avatarPadrao.png" alt="lock avatar" />
+            <div class="lock-pwd">
+                <form role="form" class="form-inline" method="POST" action="Index">
+                    <input type="hidden" name="Login" value="@Seguranca.Usuario().Login" />
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" name="Senha" class="form-control lock-input">
+                        <button class="btn btn-lock" type="submit">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

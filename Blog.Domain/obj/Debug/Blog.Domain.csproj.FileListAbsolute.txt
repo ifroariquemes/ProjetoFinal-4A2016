@@ -1,0 +1,4 @@
+D:\Repositorios\Blog\Blog.Domain\bin\Debug\Blog.Domain.dll
+D:\Repositorios\Blog\Blog.Domain\bin\Debug\Blog.Domain.pdb
+D:\Repositorios\Blog\Blog.Domain\obj\Debug\Blog.Domain.dll
+D:\Repositorios\Blog\Blog.Domain\obj\Debug\Blog.Domain.pdb

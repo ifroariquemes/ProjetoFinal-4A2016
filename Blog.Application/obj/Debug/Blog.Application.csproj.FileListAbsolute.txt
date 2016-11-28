@@ -1,0 +1,17 @@
+D:\Repositorios\Blog\Blog.Application\bin\Debug\Blog.Application.dll
+D:\Repositorios\Blog\Blog.Application\bin\Debug\Blog.Application.pdb
+D:\Repositorios\Blog\Blog.Application\bin\Debug\Blog.Domain.dll
+D:\Repositorios\Blog\Blog.Application\bin\Debug\Blog.Repository.dll
+D:\Repositorios\Blog\Blog.Application\bin\Debug\MongoDB.Driver.Legacy.dll
+D:\Repositorios\Blog\Blog.Application\bin\Debug\MongoDB.Driver.dll
+D:\Repositorios\Blog\Blog.Application\bin\Debug\MongoDB.Bson.dll
+D:\Repositorios\Blog\Blog.Application\bin\Debug\MongoDB.Driver.Core.dll
+D:\Repositorios\Blog\Blog.Application\bin\Debug\Blog.Domain.pdb
+D:\Repositorios\Blog\Blog.Application\bin\Debug\Blog.Repository.pdb
+D:\Repositorios\Blog\Blog.Application\bin\Debug\MongoDB.Driver.Legacy.xml
+D:\Repositorios\Blog\Blog.Application\bin\Debug\MongoDB.Driver.xml
+D:\Repositorios\Blog\Blog.Application\bin\Debug\MongoDB.Bson.xml
+D:\Repositorios\Blog\Blog.Application\bin\Debug\MongoDB.Driver.Core.xml
+D:\Repositorios\Blog\Blog.Application\obj\Debug\Blog.Application.csprojResolveAssemblyReference.cache
+D:\Repositorios\Blog\Blog.Application\obj\Debug\Blog.Application.dll
+D:\Repositorios\Blog\Blog.Application\obj\Debug\Blog.Application.pdb

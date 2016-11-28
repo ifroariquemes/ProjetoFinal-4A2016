@@ -1,0 +1,90 @@
+﻿@using System.Globalization
+@model Blog.Domain.Entities.Autor
+
+<div class="col-md-12">
+    <!--breadcrumbs start -->
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Dashboard", "Home", new { Area = "Painel" })"><i class="fa fa-home"></i> Inicio</a></li>
+        <li class="active">Editar Perfil</li>
+    </ul>
+    <!--breadcrumbs end -->
+</div>
+
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading">
+            @(string.IsNullOrEmpty(Model.Id) ? "Cadastrar novo usuário" : "Editar usuário: " + Model.Nome)
+        </header>
+        <div class="panel-body">
+            <div>
+                <form class="cmxform form-horizontal " id="usuarioForm" method="POST" action="" novalidate="novalidate" enctype="multipart/form-data">
+                    <div class="form-group ">
+                        <label for="Nome" class="control-label col-lg-3">Nome:</label>
+                        <div class="col-lg-6">
+                            <input class=" form-control" id="Nome" name="Nome" type="text" value="@Model.Nome" required="">
+                            <label for="Nome" class="error">@Html.ValidationMessageFor(x => x.Nome)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="Login" class="control-label col-lg-3">Login:</label>
+                        <div class="col-lg-6">
+                            <input class="form-control " id="Login" type="text" name="Login" value="@Model.Login" disabled="">
+                            <label for="Login" class="error">@Html.ValidationMessageFor(x => x.Login)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="Senha" class="control-label col-lg-3">Senha:</label>
+                        <div class="col-lg-6">
+                            <input class="form-control " id="Senha" type="password" name="Senha">
+                            <label for="Senha" class="error">@Html.ValidationMessageFor(x => x.Senha)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-3 col-lg-6">
+                            <button class="btn btn-primary" type="submit">Salvar</button>
+                            <a href="@Url.Action("Dashboard", "Home", new {Area = "Painel"})" class="btn btn-default">Cancelar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+     $("#usuarioForm").validate({
+         rules:{
+             Nome:{
+                 required: true,
+                 minlength: 3
+             },
+             ConfirmarSenha: {
+                 equalTo: "#Senha"
+             },
+         },
+         messages:{
+             Nome:{
+                 required: "O campo nome é obrigatorio.",
+                 minlength: "O campo nome deve conter no mínimo 3 caracteres."
+             },
+             Email: {
+                 required: "O campo email é obrigatorio.",
+                 email: "O campo email deve conter um email válido."
+             },
+             Senha: {
+                 required: "O campo senha é obrigatorio."
+             },
+             ConfirmarSenha: {
+                 required: "O campo confirmação de senha é obrigatorio.",
+                 equalTo: "O campo confirmação de senha deve ser identico ao campo senha."
+             },
+         }
+
+     });
+</script>

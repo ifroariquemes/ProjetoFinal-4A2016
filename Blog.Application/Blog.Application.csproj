@@ -40,7 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="AutorApplication.cs" />
+    <Compile Include="CategoriaApplication.cs" />
+    <Compile Include="Fabrica.cs" />
+    <Compile Include="PostApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.Domain\Blog.Domain.csproj">
+      <Project>{5185ba52-11c5-4ac7-a658-7fd396fcf4cd}</Project>
+      <Name>Blog.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.Repository\Blog.Repository.csproj">
+      <Project>{93f307f3-0091-4d6e-adb4-0ed30fd4094d}</Project>
+      <Name>Blog.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,67 @@
+﻿@using System.Globalization
+@{
+    ViewBag.Title = "HD7  - Gerenciador de Painel de Noticias";
+}
+
+<link href="~/Content/clock/style.css" rel="stylesheet">
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-8">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Seja bem vindo. (Em breve, novas funcionalidades)
+                        <span class="tools pull-right">
+                            @*<a href="javascript:;" class="fa fa-chevron-down"></a>
+                                <a href="javascript:;" class="fa fa-cog"></a>
+                                <a href="javascript:;" class="fa fa-times"></a>*@
+                        </span>
+                    </header>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="center-block">
+                                <div class="col-lg-12">
+                                    <img src="~/Content/Panel/Bucket/img/enconstrucao.jpg" style="width: 450px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Relogio -->
+            <div class="col-sm-4">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Relogio
+                        <span class="tools pull-right">
+                            @*<a href="javascript:;" class="fa fa-chevron-down"></a>
+                                <a href="javascript:;" class="fa fa-cog"></a>
+                                <a href="javascript:;" class="fa fa-times"></a>*@
+                        </span>
+                    </header>
+                    <div class="panel-body">
+                        <div class="profile-nav alt">
+                            <section class="panel">
+                                <div class="user-heading alt clock-row terques-bg">
+                                    <h1>@Html.DisplayName(DateTime.Now.ToString("dd/MM/yyyy"))</h1>
+                                    <p class="text-left">@Html.DisplayName(DateTime.Now.Year.ToString(CultureInfo.InvariantCulture)), @Html.DisplayName(DateTime.Now.DayOfWeek.ToString())</p>
+                                </div>
+                                <ul id="clock">
+                                    <li id="sec"></li>
+                                    <li id="hour"></li>
+                                    <li id="min"></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Fim Relogio -->
+        </div>
+    </div>
+</div>
+
+<!--clock init-->
+<script src="~/Scripts/clock.js"></script>

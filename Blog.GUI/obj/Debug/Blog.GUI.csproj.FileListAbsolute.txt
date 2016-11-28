@@ -14,6 +14,8 @@ D:\Repositorios\Blog\Blog.GUI\bin\Blog.GUI.dll.config
 D:\Repositorios\Blog\Blog.GUI\bin\Blog.GUI.dll
 D:\Repositorios\Blog\Blog.GUI\bin\Blog.GUI.pdb
 D:\Repositorios\Blog\Blog.GUI\bin\Antlr3.Runtime.dll
+D:\Repositorios\Blog\Blog.GUI\bin\Blog.Application.dll
+D:\Repositorios\Blog\Blog.GUI\bin\Blog.Domain.dll
 D:\Repositorios\Blog\Blog.GUI\bin\EntityFramework.dll
 D:\Repositorios\Blog\Blog.GUI\bin\EntityFramework.SqlServer.dll
 D:\Repositorios\Blog\Blog.GUI\bin\Microsoft.AspNet.Identity.Core.dll
@@ -32,6 +34,8 @@ D:\Repositorios\Blog\Blog.GUI\bin\Microsoft.Owin.Security.Twitter.dll
 D:\Repositorios\Blog\Blog.GUI\bin\Microsoft.Web.Infrastructure.dll
 D:\Repositorios\Blog\Blog.GUI\bin\Newtonsoft.Json.dll
 D:\Repositorios\Blog\Blog.GUI\bin\Owin.dll
+D:\Repositorios\Blog\Blog.GUI\bin\PagedList.dll
+D:\Repositorios\Blog\Blog.GUI\bin\PagedList.Mvc.dll
 D:\Repositorios\Blog\Blog.GUI\bin\System.Web.Helpers.dll
 D:\Repositorios\Blog\Blog.GUI\bin\System.Web.Mvc.dll
 D:\Repositorios\Blog\Blog.GUI\bin\System.Web.Optimization.dll
@@ -40,7 +44,16 @@ D:\Repositorios\Blog\Blog.GUI\bin\System.Web.WebPages.Deployment.dll
 D:\Repositorios\Blog\Blog.GUI\bin\System.Web.WebPages.dll
 D:\Repositorios\Blog\Blog.GUI\bin\System.Web.WebPages.Razor.dll
 D:\Repositorios\Blog\Blog.GUI\bin\WebGrease.dll
+D:\Repositorios\Blog\Blog.GUI\bin\Blog.Repository.dll
+D:\Repositorios\Blog\Blog.GUI\bin\MongoDB.Driver.Legacy.dll
+D:\Repositorios\Blog\Blog.GUI\bin\MongoDB.Driver.dll
+D:\Repositorios\Blog\Blog.GUI\bin\MongoDB.Bson.dll
+D:\Repositorios\Blog\Blog.GUI\bin\MongoDB.Driver.Core.dll
+D:\Repositorios\Blog\Blog.GUI\bin\Blog.Application.pdb
+D:\Repositorios\Blog\Blog.GUI\bin\Blog.Domain.pdb
 D:\Repositorios\Blog\Blog.GUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Repositorios\Blog\Blog.GUI\bin\PagedList.xml
+D:\Repositorios\Blog\Blog.GUI\bin\PagedList.Mvc.xml
 D:\Repositorios\Blog\Blog.GUI\bin\System.Web.Helpers.xml
 D:\Repositorios\Blog\Blog.GUI\bin\System.Web.Mvc.xml
 D:\Repositorios\Blog\Blog.GUI\bin\System.Web.Optimization.xml
@@ -64,6 +77,11 @@ D:\Repositorios\Blog\Blog.GUI\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Repositorios\Blog\Blog.GUI\bin\Microsoft.Owin.Security.Google.xml
 D:\Repositorios\Blog\Blog.GUI\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Repositorios\Blog\Blog.GUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Repositorios\Blog\Blog.GUI\bin\Blog.Repository.pdb
+D:\Repositorios\Blog\Blog.GUI\bin\MongoDB.Driver.Legacy.xml
+D:\Repositorios\Blog\Blog.GUI\bin\MongoDB.Driver.xml
+D:\Repositorios\Blog\Blog.GUI\bin\MongoDB.Bson.xml
+D:\Repositorios\Blog\Blog.GUI\bin\MongoDB.Driver.Core.xml
 D:\Repositorios\Blog\Blog.GUI\obj\Debug\Blog.GUI.csprojResolveAssemblyReference.cache
 D:\Repositorios\Blog\Blog.GUI\obj\Debug\Blog.GUI.dll
 D:\Repositorios\Blog\Blog.GUI\obj\Debug\Blog.GUI.pdb

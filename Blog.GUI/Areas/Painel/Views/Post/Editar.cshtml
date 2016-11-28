@@ -1,0 +1,113 @@
+﻿@using Blog.Domain.Entities
+@model Blog.GUI.Areas.Painel.Controllers.PostViewModel
+
+<script type="text/javascript" src="~/Scripts/Editor/ckeditor.js"></script>
+
+<div class="col-md-12">
+    <!--breadcrumbs start -->
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Dashboard", "Home", new { Area = "Painel" })"><i class="fa fa-home"></i> Inicio</a></li>
+        <li><a href="@Url.Action("Index", "Post", new { Area = "Painel" })"><i class="fa fa-home"></i> Postagens</a></li>
+        <li class="active">Editar</li>
+    </ul>
+    <!--breadcrumbs end -->
+</div>
+
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading">
+            @(string.IsNullOrEmpty(Model.Id) ? "Cadastrar nova postagem" : "Editar postagem: " + Model.Titulo)
+        </header>
+        <div class="panel-body">
+            <div>
+                @Html.ValidationSummary()
+                <form class="cmxform form-horizontal " id="usuarioForm" method="POST" action="" novalidate="novalidate" enctype="multipart/form-data">
+
+                    <div class="form-group ">
+                        <label for="Titulo" class="control-label col-lg-3">Titulo:</label>
+                        <div class="col-lg-6">
+                            <input class=" form-control" id="Titulo" name="Titulo" type="text" value="@Model.Titulo" required="">
+                            <label for="Titulo" class="error">@Html.ValidationMessageFor(x => x.Titulo)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="CategoriaId" class="control-label col-lg-3">Categoria:</label>
+                        <div class="col-lg-6">
+                            <select name="CategoriaId" id="CategoriaId" class="form-control" required="">
+                                @foreach (var categoria in (List<Categoria>)ViewBag.Categoria)
+                                {
+                                    var selected = "";
+                                    if (categoria.Id == Model.CategoriaId)
+                                    {
+                                        selected = "selected";
+                                    }
+                                    <option value='@categoria.Id' @selected>@categoria.Nome</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="Resumo" class="control-label col-lg-3">Resumo:</label>
+                        <div class="col-lg-6">
+                            <textarea class="form-control" rows="3" id="Resumo" name="Resumo" required="">@Model.Resumo</textarea>
+                            <label for="Resumo" class="error">@Html.ValidationMessageFor(x => x.Resumo)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="Conteudo" class="control-label col-lg-3">Conteudo:</label>
+                        <div class="col-md-6">
+                            <textarea name="Conteudo" id="Conteudo" rows="10" cols="80" class="form-control">
+                                @Model.Conteudo
+                            </textarea>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace('Conteudo');
+                            </script>
+
+                            <label for="Conteudo" class="error">@Html.ValidationMessageFor(x => x.Conteudo)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="Data" class="control-label col-lg-3">Data:</label>
+                        <div class="col-lg-6">
+                            <input class="form-control " id="Data" type="date" name="Data" value="@Model.Data">
+                            <label for="Data" class="error">@Html.ValidationMessageFor(x => x.Data)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-3 col-lg-6">
+                            <button class="btn btn-primary" type="submit">Salvar</button>
+                            <a href="@Url.Action("Index")" class="btn btn-default">Cancelar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    $("#usuarioForm").validate({
+        rules: {
+            Titulo: {
+                required: true,
+                minlength: 3
+            }
+        },
+        messages: {
+            Titulo: {
+                required: "O campo titulo é obrigatorio.",
+                minlength: "O campo titulo deve conter no mínimo 3 caracteres."
+            }
+        }
+
+    });
+</script>
