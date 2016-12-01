@@ -1,0 +1,33 @@
+﻿@model Blog.Domain.Entities.Post
+
+<!--BEGIN #primary .hfeed-->
+<div id="primary" class="hfeed">
+
+
+    <!--BEGIN .hentry -->
+    <div class="post-707 post type-post status-publish format-standard has-post-thumbnail hentry category-novidades tag-rapidleech" id="post-707">
+        <h2 class="entry-title">@Model.Titulo</h2>
+
+        <!--BEGIN .entry-meta .entry-header-->
+        <div class="entry-meta entry-header">
+            <span class="author">By @Model.Autor.Nome</span>
+            <span class="meta-sep"> | </span>
+            <span class="published">@Model.DateTime.ToString("dd/MM/yyyy")</span>
+            <span class="meta-sep"> | </span>
+            <span class="entry-categories"><a href="@Url.Action("PorCategoria","Post", new {idCategoria = Model.Categoria.Id})" rel="category tag">@Model.Categoria.Nome</a></span>
+            <span class="meta-sep"> | </span>
+            <!--END .entry-meta entry-header -->
+        </div>
+        <!--BEGIN .entry-content -->
+        <div class="entry-content">
+            <p>
+                @Html.Raw(Model.Conteudo)
+            </p>
+            <!--END .entry-content -->
+        </div>
+
+        <!--END .hentry-->
+    </div>
+    <!--END #primary .hfeed-->
+
+</div>

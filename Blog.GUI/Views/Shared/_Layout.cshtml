@@ -1,0 +1,254 @@
+﻿@using Blog.Domain.Entities
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- BEGIN html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+    <!-- BEGIN head -->
+    <!-- Meta Tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />					<!-- Title -->
+    <title>Blog.com</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Content/Themes/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/Content/Themes/print.css" type="text/css" media="print" />
+
+    <!-- Theme Hook -->
+    <!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[361,384] -->
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='wp-polls-css' href='~/Content/Themes/polls-css.css?ver=2.73.1' type='text/css' media='all' />
+    <style id='wp-polls-inline-css' type='text/css'>
+        .wp-polls .pollbar {
+            margin: 1px;
+            font-size: 8px;
+            line-height: 10px;
+            height: 10px;
+            background: #f55d5d;
+            border: 1px solid #c8c8c8;
+        }
+    </style>
+    <link rel='stylesheet' id='otw-shortcode-general_foundicons-css' href='~/Content/Themes/general_foundicons.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='otw-shortcode-social_foundicons-css' href='~/Content/Themes/social_foundicons.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='otw-shortcode-css' href='~/Content/Themes/otw_shortcode.css' type='text/css' media='all' />
+    <script type='text/javascript' src='~/Scripts/Themes/jquery.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/Themes/core.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/Themes/widget.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/Themes/tabs.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/Themes/tabbed-widget.js'></script>
+
+    <!-- JS Scripts -->
+    <script type="text/javascript" src="~/Scripts/Themes/superfish.js"></script>
+    <script type="text/javascript" src="~/Scripts/Themes/carousel.js"></script>
+    <script type="text/javascript" src="~/Scripts/Themes/jquery.color.js"></script>
+    <script type="text/javascript" src="~/Scripts/Themes/jquery.custom.js"></script>
+
+
+
+    <!-- END head -->
+</head>
+
+<body class="home blog chrome">
+
+    <!-- BEGIN #container -->
+    <div id="container">
+
+        <!-- BEGIN #header -->
+        <div id="header">
+
+            <!-- BEGIN #header-top -->
+            <div id="header-top">
+
+                <!-- BEGIN #header-top-inner -->
+                <div id="header-top-inner" class="clearfix">
+
+                    <!-- BEGIN #secondary-nav -->
+                    <div id="secondary-nav">
+                        <div class="menu"><ul><li class="current_page_item"><a href="@Url.Action("Index")">Home</a></li></ul></div>
+
+                        <!-- END #secondary-nav -->
+                    </div>
+
+                    <!-- BEGIN #feeds -->
+                    <div id="feeds">
+                        <ul>
+                            <li class="posts"><a href="@Url.Action("Index", "Post")">Postes</a></li>
+                        </ul>
+                        <!-- END #feeds -->
+                    </div>
+
+                    <!-- END #header-top-inner -->
+                </div>
+
+                <!-- END #header-top -->
+            </div>
+
+            <!-- BEGIN #header-inner -->
+            <div id="header-inner" class="clearfix">
+
+                <!-- BEGIN #logo -->
+                <div id="logo">
+
+                    <a href="@Url.Action("Index")"><img src="~/Content/Themes/img/logo.png" alt="Blog.com" /></a>
+
+                    <!-- END #logo -->
+                </div>
+
+
+                <!-- END #header-inner -->
+            </div>
+
+            <!--END .header-->
+        </div>
+
+        <!-- BEGIN #primary-nav -->
+        <div id="primary-nav">
+
+            <div id="primary-nav-inner">
+
+                <ul>
+                    <li class="cat-item cat-item-48">
+                        <a href="@Url.Action("Index","Home")">Home</a>
+                    </li>
+                    <li class="cat-item cat-item-17">
+                        <a href="@Url.Action("Index","Post")">Postes</a>
+                    </li>
+                </ul>
+
+                <!-- END #primary-nav-inner -->
+            </div>
+
+            <!-- END #primary-nav -->
+        </div>
+
+
+        <!-- BEGIN #content-wrapper -->
+        <div id="content-wrapper">
+
+            <!--BEGIN #content -->
+            <div id="content" class="clearfix">
+
+                @RenderBody()
+
+                <!--BEGIN #sidebar .aside-->
+                <div id="sidebar" class="aside">
+
+                    <div id="categories-4" class="widget widget_categories">
+                        <h3 class="widget-title">Categorias</h3> 
+                        <ul>
+                            @foreach (var categoria in (List<Categoria>)ViewBag.Categorias)
+                            {
+                                <li class="cat-item cat-item-48">
+                                    <a href="@Url.Action("PorCategoria","Post", new {idCategoria = categoria.Id})">@categoria.Nome</a>
+                                </li>
+                            }
+                        </ul>
+
+                        <!-- BEGIN #sidebar-narrow-container -->
+                        <div id="sidebar-narrow-container" class="clearfix">
+
+                            <!-- BEGIN .sidebar-narrow -->
+                            <div class="sidebar-narrow alignleft">
+
+
+                                <!-- END .sidebar-narrow -->
+                            </div>
+
+                            <!-- BEGIN .sidebar-narrow -->
+                            <div class="sidebar-narrow alignright">
+
+
+                                <!-- END .sidebar-narrow -->
+                            </div>
+
+
+                            <!-- END #sidebar-narrow-container -->
+                        </div>
+
+                        <!--END #sidebar .aside-->
+                    </div>
+
+                    <!-- END #content -->
+                </div>
+
+            <!-- END #content-wrapper -->
+        </div>
+
+        <!-- BEGIN #footer -->
+        <div id="footer">
+
+            <!-- BEGIN #footer-top -->
+            <div id="footer-top">
+                &nbsp;
+                <!-- END #footer-top -->
+            </div>
+
+            <!-- BEGIN #footer-inner -->
+            <div id="footer-inner" class="clearfix">
+
+                <!-- BEGIN .footer-widget -->
+                <div class="footer-widget">
+
+
+                    <!-- END .footer-widget -->
+                </div>
+
+                <!-- BEGIN .footer-widget -->
+                <div class="footer-widget">
+
+
+                    <!-- END .footer-widget -->
+                </div>
+
+                <!-- BEGIN .footer-widget -->
+                <div class="footer-widget footer-widget-last">
+
+
+                    <!-- END .footer-widget -->
+                </div>
+
+                <!-- END #footer-inner -->
+            </div>
+
+            <!-- BEGIN #footer-notes -->
+            <div id="footer-notes">
+
+                <!-- BEGIN #footer-notes-inner  -->
+                <div id="footer-notes-inner">
+
+                    <p class="copyright">&copy; 2016 <a href="@Url.Action("Index","Home")">Blog.com</a>.</p>
+
+                    <p class="credit">Powered by <a href="@Url.Action("Index","Home")">Blog.com</a> </p>
+
+                    <!-- END #footer-notes-inner -->
+                </div>
+
+                <!-- END #footer-notes -->
+            </div>
+
+            <!-- END #footer -->
+        </div>
+
+        <!-- END #container -->
+    </div>
+
+    <!-- Theme Hook -->
+</body>
+<!--END html-->
+</html>

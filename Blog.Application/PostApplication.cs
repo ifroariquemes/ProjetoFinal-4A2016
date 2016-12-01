@@ -1,4 +1,6 @@
-﻿using Blog.Domain.Contracts;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Blog.Domain.Contracts;
 using Blog.Domain.Entities;
 
 namespace Blog.Application
@@ -10,6 +12,11 @@ namespace Blog.Application
         public PostApplication(IRepository<Post> repository) : base(repository)
         {
             _repository = repository;
+        }
+
+        public IEnumerable<Post> BuscarPorCategoria(string idCategoria)
+        {
+            return _repository.GetAll().Where(x => x.Categoria.Id == idCategoria).OrderByDescending(x=>x.DateTime);
         }
     }
 }

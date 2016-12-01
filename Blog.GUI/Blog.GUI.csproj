@@ -179,6 +179,7 @@
     <Compile Include="Areas\Painel\Controllers\PostController.cs" />
     <Compile Include="Areas\Painel\PainelAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -352,6 +353,22 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\style-responsive.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\Themes\general_foundicons.css" />
+    <Content Include="Content\Themes\img\bg-body.gif" />
+    <Content Include="Content\Themes\img\bg-feeds.png" />
+    <Content Include="Content\Themes\img\bg-footer-top.gif" />
+    <Content Include="Content\Themes\img\bg-footer.gif" />
+    <Content Include="Content\Themes\img\bg-header.gif" />
+    <Content Include="Content\Themes\img\bg-light.png" />
+    <Content Include="Content\Themes\img\bg-primary-nav-sep.gif" />
+    <Content Include="Content\Themes\img\bg-top-nav.png" />
+    <Content Include="Content\Themes\img\bg-widget-title.gif" />
+    <Content Include="Content\Themes\img\logo.png" />
+    <Content Include="Content\Themes\otw_shortcode.css" />
+    <Content Include="Content\Themes\polls-css.css" />
+    <Content Include="Content\Themes\print.css" />
+    <Content Include="Content\Themes\social_foundicons.css" />
+    <Content Include="Content\Themes\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap-colorpicker.js" />
@@ -926,6 +943,15 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scripts.js" />
     <Content Include="Scripts\spinner.min.js" />
+    <Content Include="Scripts\Themes\carousel.js" />
+    <Content Include="Scripts\Themes\core.min.js" />
+    <Content Include="Scripts\Themes\jquery.color.js" />
+    <Content Include="Scripts\Themes\jquery.custom.js" />
+    <Content Include="Scripts\Themes\jquery.min.js" />
+    <Content Include="Scripts\Themes\superfish.js" />
+    <Content Include="Scripts\Themes\tabbed-widget.js" />
+    <Content Include="Scripts\Themes\tabs.min.js" />
+    <Content Include="Scripts\Themes\widget.min.js" />
     <Content Include="Scripts\toggle-init.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -942,11 +968,16 @@
     <Content Include="Scripts\Panel\Bucket\Editor\plugins\wsc\README.md" />
     <Content Include="Scripts\Panel\Bucket\Editor\skins\moono\readme.md" />
     <Content Include="Scripts\Panel\Bucket\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Post\PorCategoria.cshtml" />
+    <Content Include="Views\Post\Ler.cshtml" />
+    <Content Include="Views\Post\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Painel\Models\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,55 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Blog.Domain.Entities.Post>
+
+<!--BEGIN #primary .hfeed-->
+<div id="primary" class="hfeed">
+
+    @if (Model.Any())
+    {
+        foreach (var post in Model)
+        {
+            <!--BEGIN .hentry -->
+            <div class="post-707 post type-post status-publish format-standard has-post-thumbnail hentry category-novidades tag-rapidleech" id="post-707">
+                <h2 class="entry-title"><a href="@Url.Action("Ler","Post", new {idPost = post.Id})" rel="bookmark" title="Permanent Link to Atualização Rapidleech 30/10/2016 Extra">@post.Titulo</a></h2>
+
+                <!--BEGIN .entry-meta .entry-header-->
+                <div class="entry-meta entry-header">
+                    <span class="author">By @post.Autor.Nome</span>
+                    <span class="meta-sep"> | </span>
+                    <span class="published">@post.DateTime.ToString("dd/MM/yyyy")</span>
+                    <span class="meta-sep"> | </span>
+                    <span class="entry-categories"><a href="@Url.Action("PorCategoria","Post", new {idCategoria = post.Categoria.Id})" rel="category tag">@post.Categoria.Nome</a></span>
+                    <span class="meta-sep"> | </span>
+                    <!--END .entry-meta entry-header -->
+                </div>
+                <!--BEGIN .entry-content -->
+                <div class="entry-content">
+                    <p>
+                        @post.Resumo
+                    </p>
+                    <!--END .entry-content -->
+                </div>
+
+                <!--END .hentry-->
+            </div>
+    <!--END #primary .hfeed-->
+        }
+        <!--BEGIN .navigation .page-navigation -->
+        <div class="dataTables_paginate paging_bootstrap pagination pull-left">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, idCategoria = ViewBag.CategoriaId }),
+                                    new PagedListRenderOptions
+                                    {
+                                        UlElementClasses = Enumerable.Empty<string>(),
+                                        DisplayPageCountAndCurrentLocation = true,
+                                        PageCountAndCurrentLocationFormat = "Página {0} de {1}"
+
+                                    })
+        </div>
+        <!--END .navigation .page-navigation -->
+
+    }
+    else
+    {
+        <h2>Ainda não existe poste cadastrado</h2>
+    }
+</div>
