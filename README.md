@@ -1,22 +1,4 @@
-#Projeto final de Des. Sis. 4° A (2016)
-
-O trabalho final será o desenvolvimento de um sistema com requisitos específicos. Será separado em grupos, cada um com um projeto de sistema. Cada equipe será composta por no máximo quatro pessoas.
-
-Basicamente as habilidades necessárias para executar este projeto incluem criação de **banco de dados**, domínio de uma linguagem de programação para geração de **CRUD** e resolução de **problemas específicos** tratados na descrição do problema de cada aplicação.
-
-Este repositório foi criado para que as equipes possam trabalhar adequadamente versionando seu código e permitindo o monitoramento pelo professor a todo momento. **Todos os integrantes devem possuir uma conta GitHub** e serão adicionados como colaboradores do repositório. Neste repositório, **cada sistema será um branch**, por isso as equipes devem fazer checkout do branch apropriado para trabalhar.
-
-##O que será avaliado?
-
-- Todos os membros da equipe devem commitar
-- Os requisitos do sistema devem estar de acordo com o foi codificado
-- Domínio das ferramentas e frameworks utilizadas
-
-##Tópicos necessários no README.md
-
-O arquivo README.md do branch deve ser modificado para explicar o processo de desenvolvimento, além das ferramentas e frameworks utilizados. 
-
-**O projeto não será avaliado sem o README.md modificado!**
+#Sobre o projeto
 
 - Nome do sistema: SysProva
 - Equipe de desenvolvimento: Aline Oliveira, Ender Mattos, Wesley Rocha.
