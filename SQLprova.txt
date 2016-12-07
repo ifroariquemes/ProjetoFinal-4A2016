@@ -1,0 +1,44 @@
+create database prova;
+CREATE TABLE users (
+id int AUTO_INCREMENT primary key,
+nome varchar(100),
+email varchar(200) not null,
+password varchar(255) not null,
+ created DATETIME,
+  modified DATETIME
+);
+
+CREATE TABLE temas (
+id int AUTO_INCREMENT primary key,
+tema varchar(50),
+user_id int,
+fatormult numeric(10,2),
+ created DATETIME,
+ modified DATETIME,
+FOREIGN KEY(user_id) REFERENCES users (id)
+);
+
+CREATE TABLE quests (
+id int AUTO_INCREMENT PRIMARY KEY,
+tema_id int,
+pont numeric(10,2),
+enunci varchar(10000),
+resposta1 varchar(1000),
+resposta2 varchar(1000),
+respostaCorreta varchar(1000),
+resposta4 varchar(1000),
+resposta5 varchar(1000),
+created DATETIME,
+modified DATETIME,
+FOREIGN KEY(tema_id) REFERENCES temas (id)
+);
+
+CREATE TABLE pontos (
+pontuacao int(100),
+user_id INT,
+quest_id INT,
+tema_id INT,
+FOREIGN KEY user_id(user_id) REFERENCES users (id),
+FOREIGN KEY quest_id(quest_id) REFERENCES quests (id),
+FOREIGN KEY tema_id(tema_id) REFERENCES temas (id)
+);
