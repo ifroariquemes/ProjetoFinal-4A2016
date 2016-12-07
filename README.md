@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Sistema de Provas Online
 
 ##Problemática
@@ -27,3 +28,7 @@ Sempre que o fator de multiplicação de um tema for alterado, a pontuação já
 ##Observações
 
 - O nome da base de dados deve ser obrigatoriamente 'prova' para que a conexão seja estabelecida.
+=======
+# ProjetoFinal-4A2016
+Projeto final da disciplina de Desenvolvimento de Sistemas do 4° A do curso Técnico em Informática em 2016
+>>>>>>> refs/remotes/origin/master
