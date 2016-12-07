@@ -22,7 +22,6 @@
         <legend><?= __('Edit Tema') ?></legend>
         <?php
             echo $this->Form->input('tema');
-            echo $this->Form->input('user_id', ['options' => $users, 'empty' => true]);
             echo $this->Form->input('fatormult');
         ?>
     </fieldset>
