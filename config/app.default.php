@@ -231,7 +231,7 @@ return [
             //'port' => 'non_standard_port_number',
             'username' => 'root',
             'password' => '',
-            'database' => 'prova',
+            'database' => 'sysprova',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
